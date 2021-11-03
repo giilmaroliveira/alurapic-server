@@ -9,7 +9,7 @@ export class UserService {
       username: 'gilmar',
       email: 'gilmar@mail.com',
       password: '123456',
-      fullName: 'Gilmar Oliveira',
+      fullname: 'Gilmar Oliveira',
       registerDate: new Date(),
     },
   ];
