@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import {
   registerDecorator,
-  ValidationArguments,
   ValidationOptions,
   ValidatorConstraint,
   ValidatorConstraintInterface,
@@ -14,10 +13,7 @@ export class IsUsernameAlreadyExistConstraint
   implements ValidatorConstraintInterface
 {
   constructor(private userService: UserService) {}
-  validate(
-    username: string,
-    validationArguments?: ValidationArguments,
-  ): boolean | Promise<boolean> {
+  validate(username: string): boolean | Promise<boolean> {
     return !!!this.userService.getByUsername(username);
   }
 }

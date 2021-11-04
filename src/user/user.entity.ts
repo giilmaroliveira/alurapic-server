@@ -1,4 +1,4 @@
-import { Exclude, Expose } from 'class-transformer';
+import { Exclude } from 'class-transformer';
 import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
 import { IsUsernameAlreadyExist } from './is-username-already-exists';
 
