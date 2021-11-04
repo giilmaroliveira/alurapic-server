@@ -1,3 +1,4 @@
+import { Exclude, Expose } from 'class-transformer';
 import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
 import { IsUsernameAlreadyExist } from './is-username-already-exists';
 
@@ -12,13 +13,12 @@ export class User {
   @IsEmail({}, { message: 'email is not valid.' })
   email: string;
 
+  // @Expose({ name: 'senha' }) change property name for request/response
+  @Exclude({ toPlainOnly: true })
   @IsNotEmpty({ message: 'password is required.' })
   password: string;
 
   @IsNotEmpty({ message: 'fullname is required.' })
   fullname: string;
   registerDate: Date;
-}
-function IsUsernameAlreadyExistConstraint(arg0: { message: string }) {
-  throw new Error('Function not implemented.');
 }
